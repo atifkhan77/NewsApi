@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/Screens/Business_screen.dart';
 
 class NavBar extends StatefulWidget {
   const NavBar({super.key});
@@ -38,9 +39,15 @@ class _NavBarState extends State<NavBar> {
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Center(
-                    child: Text(
-                      navBarItem[index],
-                      style: const TextStyle(color: Colors.deepPurple),
+                    child: TextButton(
+                      onPressed: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => BusinessScreen()));
+                      },
+                      child: const Text(
+                        "Business News",
+                        style: const TextStyle(color: Colors.deepPurple),
+                      ),
                     ),
                   ),
                 ),
