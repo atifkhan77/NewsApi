@@ -27,38 +27,48 @@ class _HomeScreenState extends State<HomeScreen> {
   void _navigateToScreen(String item) {
     if (item == "Business News") {
       Navigator.of(context).push(
-        MaterialPageRoute(builder: (context) => const BusinessScreen()),
+        MaterialPageRoute(
+          builder: (context) => const BusinessScreen(),
+        ),
       );
     }
     if (item == "Technology News") {
       Navigator.of(context).push(
-        MaterialPageRoute(builder: (context) => const TechnologyScreen()),
+        MaterialPageRoute(
+          builder: (context) => const TechnologyScreen(),
+        ),
       );
     }
     if (item == "Science News") {
       Navigator.of(context).push(
-        MaterialPageRoute(builder: (context) => const ScienceScreen()),
+        MaterialPageRoute(
+          builder: (context) => const ScienceScreen(),
+        ),
       );
     }
     if (item == "Sports News") {
       Navigator.of(context).push(
-        MaterialPageRoute(builder: (context) => const SportsScreen()),
+        MaterialPageRoute(
+          builder: (context) => const SportsScreen(),
+        ),
       );
     }
     if (item == "Top News") {
       Navigator.of(context).push(
-        MaterialPageRoute(builder: (context) => const TopScreen()),
+        MaterialPageRoute(
+          builder: (context) => const TopScreen(),
+        ),
       );
     }
     if (item == "Entertainment News") {
       Navigator.of(context).push(
-        MaterialPageRoute(builder: (context) => const EntertainmentScreen()),
+        MaterialPageRoute(
+          builder: (context) => const EntertainmentScreen(),
+        ),
       );
     }
   }
 
-  // if(item == ){}
-  // }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
