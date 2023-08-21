@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Screens/Navigation/newsScreen.dart';
 import '../Api/api.dart';
+import '../Api/detail_screen_provider.dart';
 
 class DetailedScreen extends StatefulWidget {
   final String url;
@@ -30,6 +31,7 @@ class _DetailedScreenState extends State<DetailedScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final detailedScreenProvider = DetailedScreenProvider(widget.url);
     final screenSize = MediaQuery.of(context).size;
 
     return Scaffold(
@@ -45,7 +47,7 @@ class _DetailedScreenState extends State<DetailedScreen> {
         ),
       ),
       body: FutureBuilder<List>(
-        future: newsArticles,
+        future: detailedScreenProvider.newsArticles,
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
             return const Center(
