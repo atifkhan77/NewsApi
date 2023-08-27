@@ -1,17 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/Constants/constants.dart';
-import 'package:flutter_application_1/Screens/HomePage.dart';
+import 'package:flutter_application_1/Screen/homeScreen.dart';
+import 'package:flutter_application_1/provider/headlines.dart';
 import 'package:provider/provider.dart';
 
-import 'Api/detail_screen_provider.dart';
-
 void main() {
-  runApp(
-    ChangeNotifierProvider(
-      create: (context) => DetailedScreenProvider(topNewsUrl),
-      child: const MyApp(),
-    ),
-  );
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -19,8 +12,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Center(child: HomeScreen()),
+    return MultiProvider(
+      providers: [ChangeNotifierProvider(create: (_) => GetNewsApi())],
+      child: const MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: HomeScreen(),
+      ),
     );
   }
 }
